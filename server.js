@@ -14,5 +14,5 @@ app.get('/', function (req, res){
 })
 
 app.get('/info', function (req, res){
-    res.render('info page')
+    res.send('info page')
 })
