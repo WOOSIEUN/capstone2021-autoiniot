@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Navigation</title>
+    <link rel="stylesheet" href="\public\stylesheets\style.css">
+    <script scr="https://code.jquery.com./jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <button>Open Menu</button>
+    <div class="nav">
+        <a href="#a" class="menu">
+            <i>메뉴</i>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="">Test Menu 1</a></li>
+                <li><a href="">Test Menu 2</a></li>
+                <li><a href="">Test Menu 3</a></li>
+                <li><a href="">Test Menu 4</a></li>
+                <li><a href="">Test Menu 5</a></li>
+            </ul>
+        <button>Close Menu</button>
+        </nav>
+    </div>
+        
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.nav .menu').on('click', function(){
+                $(this).toggleClass('on');
+                $('.nav').toggleClass('on');
+            });
+        });
+    </script>
+</body>
+</html>

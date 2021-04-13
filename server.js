@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express();
 
+app.use(express.static(__dirname + '/views'));
+
 const server = app.listen(4000, () => {
     console.log('Start Server : localhost:4000');
 });
@@ -13,6 +15,6 @@ app.get('/', function (req, res){
     res.render('index.html')
 })
 
-app.get('/info', function (req, res){
-    res.send('info page')
+app.get('/main', function (req, res){
+    res.render('main.html')
 })
