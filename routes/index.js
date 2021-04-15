@@ -15,4 +15,12 @@ router.get('/main_warehousing', function (req, res, next){
   res.render('main_warehousing.html')
 })
 
+router.get('/login', function (req, res, next){
+  res.render('login.html')
+})
+
+router.get('/join', function (req, res, next){
+  res.render('join.html')
+})
+
 module.exports = router;
