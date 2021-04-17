@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Navigation</title>
-    <link rel="stylesheet" href="/public/stylesheets/style.css">
+    <link rel="stylesheet" href="/public/stylesheets/warehousingStyle.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
    </head>
   <body>
-    <button>Open Menu</button>
+
     <div class="nav">
         <a href="#a" class="menu">
             <i>메뉴</i>
@@ -19,14 +19,44 @@
         </a>
         <nav>
             <ul>
-                <li><a href="">Test Menu 1</a></li>
-                <li><a href="">Test Menu 2</a></li>
-                <li><a href="">Test Menu 3</a></li>
-                <li><a href="">Test Menu 4</a></li>
-                <li><a href="">Test Menu 5</a></li>
+                <li><a href="">실시간 창고 확인</a></li>
+                <li><a href="">물품 입고 확인 및 등록</a></li>
+                <li><a href="">Help</a></li>
+                <li><a href="">My page</a></li>
             </ul>
-        <button>Close Menu</button>
         </nav>
+    </div>
+
+    <div class="warehousingContent">
+
+        <button class = "whRegBtn">물품 등록</button>
+
+        <table class = "whTable">
+            <tr>
+                <th colspan="5">물품 입고 확인</th>
+            </tr>
+            <tr>
+                <th>RFID</th>
+                <th>물품명</th>
+                <th>물품수량</th>
+                <th>입고상황</th>
+                <th>입고사진</th>
+            </tr>        
+            <tr>
+                <td>RFID sample 1</td>
+                <td>핸들</td>
+                <td>4</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 2</td>
+                <td>악세사리</td>
+                <td>50</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+          </table>
     </div>
 
     <script type="text/javascript">
