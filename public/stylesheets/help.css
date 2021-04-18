@@ -1,0 +1,8 @@
+.div-help { max-width: 1000px; min-width:250px; margin:200px auto; font-size: 14px;  }
+.list-feature li { position: relative; min-height: 300px; border-bottom: 1px solid #EDEDED; }
+.list-feature .num { color:#CCCCCC; font-size: 25px; }
+.list-feature h3 { margin-top:5px; font-size:34px; line-height: 100% }
+.list-feature h4 { margin-top:20px; font-size:18px; color:#5438f1; }
+.list-feature p {  margin-top:10px; color:#888; line-height: 1.5 }
+.list-feature .text {  padding:35px 0 0 10px }
+.list-feature .jpg { position: absolute; right: 0; bottom:50px;}

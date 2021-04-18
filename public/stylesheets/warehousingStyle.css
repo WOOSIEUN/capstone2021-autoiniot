@@ -17,6 +17,7 @@ body { background: url(../images/main_bg.jpg) no-repeat center top / 100% auto;}
 .nav nav { padding: 100px 50px 0;}
 .nav li { border: 1px solid #ccc;}
 .nav li a { font-size: 20px; color: #FFF; line-height: 40px; font-weight: 1000;}
+.click { cursor: pointer; }
 
 .warehousingContent { display: block; padding: 50px; margin: 20px; margin-left: 250px; border-radius: 10px 10px 10px 10px ;background-color: white;}
 .whRegBtn {display: block;}
@@ -25,3 +26,5 @@ th { border: 1px solid #e0e0e0; font-weight: 800; padding: 10px;}
 td { border: 1px solid #e0e0e0; padding: 3px;}
 .checkBtn { width: 50px; height: 30px; border: 1px solid #787878; background-color: yellowgreen; color: white; font-weight: 500;}
 .checkBtn:hover { color: black;}
+
+/* 메뉴 접었을 때 항목 눌리는 버그 있음. */

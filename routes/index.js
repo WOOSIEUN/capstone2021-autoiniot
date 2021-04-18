@@ -23,4 +23,7 @@ router.get('/join', function (req, res, next){
   res.render('join.html')
 })
 
+router.get('/monitoring', (req, res, next) => { res.render('monitoring.ejs') });
+router.get('/help', (req, res, next) => { res.render('help.ejs') });
+
 module.exports = router;
