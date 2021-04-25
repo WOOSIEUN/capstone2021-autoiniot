@@ -1,0 +1,128 @@
+/* COMMON */
+body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+/* HEADER */
+header {
+  background-color:#f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+}
+header .inner {
+  width: 1300px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative;
+}
+header .logo {
+  height: 80px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left : 0;
+  margin: auto;
+}
+
+header .sub-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+header .sub-menu ul.menu li {
+  position: relative;
+}
+header .sub-menu ul.menu li::before {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute; /*자동으로 요소가 block으로 바뀜*/
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+header .sub-menu ul.menu li a {
+  font-size: 18px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+/*
+header .submenu .search {
+
+}
+header .submenu .search input {
+
+}
+header .submenu .search .material-icons {
+
+}*/
+
+header .main-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+header .main-menu .item {
+
+}
+header .main-menu .item .item__name {
+  padding: 11px 20px 28px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 21px;
+}
+header .main-menu .item:hover .item__name {
+  background-color: #b6b6b6;
+  color: #66045e;
+  border-radius: 6px 6px 6px 6px;
+}
+header .main-menu .item .item__contents {
+    
+}
+
+/*service-start*/
+.service-start {
+  background-color:azure;
+
+}
+.service-start .inner{
+  position: relative;
+}
+.service-start .homebg{
+  width: 100%;
+  height: 3000px;
+  margin: 0 auto;
+  position: relative;
+}
+.service-start .text-group{
+
+}
+.service-start .text-group .title{
+  margin: 0 auto;
+  position: absolute;
+}
+.service-start .text-group .start{
+
+}
