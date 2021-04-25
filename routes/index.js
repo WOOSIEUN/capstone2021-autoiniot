@@ -7,12 +7,10 @@ router.get('/', function (req, res, next){
   res.render('index.html')
 })
 
-router.get('/main_realtime_warehouse', function (req, res, next){
-  res.render('main_realtime_warehouse.html')
-})
+router.get('/monitoring', (req, res, next) => { res.render('monitoring.ejs') });
 
-router.get('/main_warehousing', function (req, res, next){
-  res.render('main_warehousing.html')
+router.get('/warehousing', function (req, res, next){
+  res.render('warehousing.html')
 })
 
 router.get('/login', function (req, res, next){
@@ -23,7 +21,6 @@ router.get('/join', function (req, res, next){
   res.render('join.html')
 })
 
-router.get('/monitoring', (req, res, next) => { res.render('monitoring.ejs') });
 router.get('/help', (req, res, next) => { res.render('help.ejs') });
 
 module.exports = router;
