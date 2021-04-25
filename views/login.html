@@ -1,25 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-<h1>login</h1>
-<form method="post">
-    <table>
-        <tr>
-            <td>ID : </td>
-            <td><input type="text" name="userId"></td>
-        </tr>
-        <tr>
-            <td>PW : </td>
-            <td><input type="password" name="userPW"></td>
-        </tr>
-        <tr>
-            <td><input type="submit" value="LOGIN"></td>
-        </tr>
-    </table>
-</form>
-</body>
+<html lnag="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>AITOINVEN : 로그인</title>
+        <link rel="stylesheet" href="/public/stylesheets/join_login.css">
+        
+    </head>
+    <body>
+        <!-- header -->
+        <div id="header">
+            <img src="public/images/main_logo.png" id="logo">
+        </div>
+
+
+        <!-- wrapper -->
+        <div id="wrapper">
+
+            <!-- content-->
+            <div id="content">
+
+                <!-- ID -->
+                <div>
+                    <h3 class="join_title">
+                        <label for="id">아이디</label>
+                    </h3>
+                    <span class="box int_id">
+                        <input type="text" id="id" class="int" maxlength="20">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- PW1 -->
+                <div>
+                    <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+                    <span class="box int_pass">
+                        <input type="password" id="pswd1" class="int" maxlength="20">
+                    </span>
+                    <span class="error_next_box"></span>
+                </div>
+
+                <!-- JOIN BTN-->
+                <div class="btn_area">
+                    <button type="button" id="btnJoin">
+                        <span>로그인</span>
+                    </button>
+                </div>
+
+                
+
+            </div> 
+            <!-- content-->
+
+        </div> 
+        <!-- wrapper -->
+    <!--<script src="app.js"></script>-->
+    </body>
 </html>
