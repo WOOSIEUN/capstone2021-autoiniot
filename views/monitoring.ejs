@@ -20,10 +20,10 @@
 					new Chart($('#chart1'), {
 						type: 'bar',
 						data: {
-							labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+							labels: ['11월', '12월', '1월', '2월', '3월', '4월'],
 							datasets: [{
-								data: [6, 4, 13, 9, 19, 5],
-                                label: '주문',
+								data: [8, 4, 13, 5, 19, 14],
+                                label: '입고',
 								backgroundColor: [
 									'rgba(255, 99, 132, 0.2)',
 									'rgba(54, 162, 235, 0.2)',
@@ -48,7 +48,20 @@
 								y: {
 									beginAtZero: true
 								}
-							}
+							},
+							plugins: {
+								legend: {
+									display: false
+								},
+								title: {
+									display: true,
+									text: '월별 입고 현황',
+									font: {
+										size: 25
+									}
+
+								},
+							},
 						}
 					});
 				});
@@ -72,6 +85,20 @@
 								],
 								hoverOffset: 4
 							}]
+						},
+						options: {
+							plugins: {
+								legend: {
+									display: false
+								},
+								title: {
+									display: true,
+									text: ' 물품수량 통계',
+									font: {
+										size: 25
+									}
+								}
+							}
 						}
 					});
 				});
@@ -84,7 +111,7 @@
 					new Chart($('#chart3'), {
 						type: 'line',
 						data: {
-							labels: [1, 2, 3, 4, 5, 6, 7],
+							labels: [0, 4, 8, 12, 16, 20, 24],
 							datasets: [{
 								label: '온도',
 								data: [13, 10, 8, 15, 19, 18, 15],
@@ -99,8 +126,67 @@
 									min: 0,
                                     max: 30
 								}
-							}
+							},
+							plugins: {
+								legend: {
+									display: false
+								},
+								title: {
+									display: true,
+									text: '온도',
+									font: {
+										size: 25
+									}
+								},
+							},
 						}
+					});
+				});
+            </script>
+        </div>
+        <div class="sensor">
+            <canvas id="chart4" width="350" height="350"></canvas>
+            <script>
+				$(function() {
+					new Chart($('#chart4'), {
+                        type: 'bar',
+						data: {
+							labels: ['11월', '12월', '1월', '2월', '3월', '4월'],
+							datasets: [
+								{
+									data: [10, 0, 7, 0, 23, 18],
+									backgroundColor: '#ff6484',
+								},
+								{
+									data: [0, -16, 0, -6, 0, 0],
+									backgroundColor: '#38a2ea',
+								}
+							]
+						},
+                        options: {
+                            plugins: {
+                                legend: {
+                                        display: false
+                                    },
+                                title: {
+                                    display: true,
+                                    text: '월별 영업이익',
+                                    font: {
+                                        size: 25
+                                    }
+
+                                },
+                            },
+                        responsive: true,
+                            scales: {
+                                x: {
+                                    stacked: true,
+                                },
+                                y: {
+                                    stacked: true
+                                }
+                            }
+                        }
 					});
 				});
             </script>
