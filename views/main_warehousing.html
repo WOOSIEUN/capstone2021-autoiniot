@@ -9,23 +9,7 @@
     <script src="http://code.jquery.com/jquery-latest.js"></script>
    </head>
   <body>
-
-    <div class="nav">
-        <a href="#a" class="menu">
-            <i>메뉴</i>
-            <span></span>
-            <span></span>
-            <span></span>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="/monitoring">실시간 창고 확인</a></li>
-                <li><a href="/main_warehousing">물품 입고 확인 및 등록</a></li>
-                <li><a href="/help">Help</a></li>
-                <li><a href="">My page</a></li>
-            </ul>
-        </nav>
-    </div>
+    <%- include('nav') %>
 
     <div class="warehousingContent">
 
@@ -56,16 +40,77 @@
                 <td>입고완료</td>
                 <td><button class = "checkBtn">확인</button></td>
             </tr>
+            <tr>
+                <td>RFID sample 3</td>
+                <td>시트</td>
+                <td>60</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 4</td>
+                <td>백미러</td>
+                <td>157</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 5</td>
+                <td>안전벨트</td>
+                <td>14</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 6</td>
+                <td>엔진</td>
+                <td>3</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 7</td>
+                <td>전조등</td>
+                <td>45</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 8</td>
+                <td>타이어</td>
+                <td>80</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 9</td>
+                <td>휠</td>
+                <td>95</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 10</td>
+                <td>스크린</td>
+                <td>5</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 11</td>
+                <td>센서</td>
+                <td>500</td>
+                <td>미입고</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
+            <tr>
+                <td>RFID sample 12</td>
+                <td>방향제</td>
+                <td>45</td>
+                <td>입고완료</td>
+                <td><button class = "checkBtn">확인</button></td>
+            </tr>
           </table>
     </div>
-
-    <script type="text/javascript">
-        $( document ).ready( function() {
-          $( '.nav .menu' ).click( function() {
-              $(this).toggleClass('on');
-              $('.nav').toggleClass('on');
-          } );
-        } );
-    </script>
 </body>
 </html>
