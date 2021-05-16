@@ -13,13 +13,9 @@ router.get('/warehousing', function (req, res, next){
   res.render('warehousing.html')
 })
 
-router.get('/login', function (req, res, next){
-  res.render('login.html')
-})
+router.get('/login', (req, res, next) => { res.render('login.ejs') });
 
-router.get('/join', function (req, res, next){
-  res.render('join.html')
-})
+router.get('/join', (req, res, next) => { res.render('join.ejs') });
 
 router.get('/help', (req, res, next) => { res.render('help.ejs') });
 
