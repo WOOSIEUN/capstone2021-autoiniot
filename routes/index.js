@@ -11,6 +11,10 @@ router.get('/warehousing', function (req, res, next){
   res.render('warehousing.html')
 })
 
+router.get('/registerItem', function (req, res, next){
+  res.render('registerItem.html')
+})
+
 router.get('/login', (req, res, next) => { res.render('login.ejs') });
 
 router.get('/join', (req, res, next) => { res.render('join.ejs') });
