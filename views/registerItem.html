@@ -7,22 +7,25 @@
         <div class="wrap1">
             <h2>물품 등록</h2>
         </div>
-        
+
         <div class="wrap2">
-            <table width="500" class="outline">
-                <tr>
-                    <th>RFID</th>
-                    <td><input type="text" name="name" class="box"></td>
-                </tr>
-                <tr>
-                    <th>물품명</th>
-                    <td><input type="text" name="name" class="box"></td>
-                </tr>
-                <tr>
-                    <th>물품수량</th>
-                    <td><input type="number" name="name" class="box"></td>
-                </tr>
-            </table>
+            <form action="/registerItem" method="POST">
+                <table width="500" class="outline">
+                    <tr>
+                        <th>RFID</th>
+                        <td><input type="text" name="rfid" class="box"></td>
+                    </tr>
+                    <tr>
+                        <th>물품명</th>
+                        <td><input type="text" name="name" class="box"></td>
+                    </tr>
+                    <tr>
+                        <th>물품수량</th>
+                        <td><input type="number" name="num" class="box"></td>
+                    </tr>
+                    <button>등록</button>
+                </table>
+            </form>
         </div>
     </body>
 </html>

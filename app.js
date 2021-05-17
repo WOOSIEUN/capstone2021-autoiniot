@@ -3,18 +3,18 @@ var express = require('express');
 var ejs = require('ejs');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 var session = require("express-session");
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+//connect DB
+var DB = require('./views/DBConnection');
 
 var app = express();
 
-//connect DB
-var DB = require('./views/DBConnection');
-DB.connect();
+var indexRouter = require('./routes/index')(app, DB);
+var usersRouter = require('./routes/users');
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -23,8 +23,8 @@ app.engine('html', require('ejs').renderFile);
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
 app.use(session({ secret :"node-session", resave:false, saveUninitialized:true }))
