@@ -1,19 +1,104 @@
-* { padding: 0; margin: 0; text-decoration: none; list-style: none;}
-body { background: url(../images/main_bg.jpg) no-repeat center top / 100% auto;}
-.nav { position: fixed; left: -100px; top:0; width: 300px; height: 100%; background: rgb(84, 56, 241); border-radius: 0 20% 80% 0; transition: all .4s;}
-.nav.on { left: 0; border-radius: 0;}
-.nav nav { opacity: 0; transition: all .5s .2s;}
-.nav.on nav { opacity: 1;}
-.nav .menu { position: absolute; right: 100px; top: 40px; z-index: 10; display: block; width: 50px; height: 50px;}
-.nav .menu i { position: absolute; font-size: 0;}
-.nav .menu span { display: block; width: 100%; height: 5px; background: #000; transition: all .5s;}
-.nav .menu span ~ span { margin: 10px 0 0;}
-.nav .menu span:nth-of-type(1) { transform: rotate(0deg) translateY(0); transform-origin: left top;}
-.nav .menu span:nth-of-type(2) { transform: translateX(0); opacity: 1;}
-.nav .menu span:nth-of-type(3) { transform: rotate(0deg); transform-origin: left top;}
-.nav .menu.on span:nth-of-type(1) { transform: rotate(45deg) translateY(-6px);}
-.nav .menu.on span:nth-of-type(2) { transform: translateX(40px); opacity: 0;}
-.nav .menu.on span:nth-of-type(3) { transform: rotate(-45deg);}
-.nav nav { padding: 100px 50px 0;}
-.nav li { border: 1px solid #ccc;}
-.nav li a { font-size: 15px; color: #000; line-height: 40px;}
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background: url(../images/main_bg.jpg) no-repeat center top / 100% auto;
+}
+
+.nav {
+  position: fixed;
+  left: -100px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: rgb(84, 56, 241);
+  border-radius: 0 20% 80% 0;
+  transition: all .4s;
+}
+
+.nav.on {
+  left: 0;
+  border-radius: 0;
+}
+
+.nav nav {
+  opacity: 0;
+  transition: all .5s .2s;
+}
+
+.nav.on nav {
+  opacity: 1;
+}
+
+.nav .menu {
+  position: absolute;
+  right: 100px;
+  top: 40px;
+  z-index: 10;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.nav .menu i {
+  position: absolute;
+  font-size: 0;
+}
+
+.nav .menu span {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #000;
+  transition: all .5s;
+}
+
+.nav .menu span~span {
+  margin: 10px 0 0;
+}
+
+.nav .menu span:nth-of-type(1) {
+  transform: rotate(0deg) translateY(0);
+  transform-origin: left top;
+}
+
+.nav .menu span:nth-of-type(2) {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nav .menu span:nth-of-type(3) {
+  transform: rotate(0deg);
+  transform-origin: left top;
+}
+
+.nav .menu.on span:nth-of-type(1) {
+  transform: rotate(45deg) translateY(-6px);
+}
+
+.nav .menu.on span:nth-of-type(2) {
+  transform: translateX(40px);
+  opacity: 0;
+}
+
+.nav .menu.on span:nth-of-type(3) {
+  transform: rotate(-45deg);
+}
+
+.nav nav {
+  padding: 100px 50px 0;
+}
+
+.nav li {
+  border: 1px solid #ccc;
+}
+
+.nav li a {
+  font-size: 15px;
+  color: #000;
+  line-height: 40px;
+}
