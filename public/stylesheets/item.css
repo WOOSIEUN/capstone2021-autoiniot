@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100%;
+    background: #f5f6f7;
+    font-family: Dotum, '돋움', Helvetica, sans-serif;
+}
+
+.header{
+    border-bottom: #5f4ebd;
+    margin-left: 20px;
+}
+
+.box {
+    display: block;
+    width: 100%;
+    height: 51px;
+    border: solid 1px #dadada;
+    padding: 10px 14px 10px 14px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+}
+
+.warehousingContent button{
+ border: 1px solid #5f4ebd;
+ background-color: rgba(0, 0, 0, 0);
+ color: #5f4ebd;
+ padding: 5px;
+}
+.warehousingContent button:hover{
+    background-color: #5f4ebd;
+    color: white;
+}
+.whRegBtn{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-left: 20px;
+    margin-right: 3px;
+}
+.whRegTestBtn{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+    margin-left: 20px;
+}

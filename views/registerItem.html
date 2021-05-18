@@ -1,14 +1,15 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="/public/stylesheets/item.css">
         <title>AUTOINVEN: 물품 등록</title>
     </head>
     <body>
-        <div class="wrap1">
+        <div class="header">
             <h2>물품 등록</h2>
         </div>
 
-        <div class="wrap2">
+        <div class="warehousingContent">
             <form action="/registerItem" method="POST">
                 <table width="500" class="outline">
                     <tr>
@@ -23,9 +24,21 @@
                         <th>물품수량</th>
                         <td><input type="number" name="num" class="box"></td>
                     </tr>
-                    <button>등록</button>
+                    <tr>
+                        <th>입고상태</th>
+                        <td>
+                            <select name="status" class="box">
+                                <option>선택</option>
+                                <option>입고완료</option>
+                                <option>미입고</option>
+                            </select>
+                        </td>
+                    
+                    </tr>
                 </table>
+                <button class = "whRegBtn">등록</button>
             </form>
+            <button class = "whRegTestBtn" onclick="location.href='warehousing'">취소</button>
         </div>
     </body>
 </html>
