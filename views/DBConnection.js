@@ -30,10 +30,12 @@ connection.query(`
             num INT(11),
             received TINYINT(1),
             picture VARCHAR(30),
-            PRIMARY KEY (rfid)
+            PRIMARY KEY (rfid),
+            FOREIGN KEY (id) REFERENCES users(id)
             );
         `);
-// FOREIGN KEY (id) REFERENCES users(id)
-// 외래키는 나중에 적용
+// 테스트 계정
+// use autoinven;
+// insert into users values ('testid', 'testpw', 'testuser', now(), '남자', 'test@naver.com', '010-0000-0000');
 
 module.exports = connection;

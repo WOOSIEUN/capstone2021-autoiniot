@@ -25,14 +25,17 @@ exports.registerItem = function(req, res, db) {
 	var rfid = req.body.rfid.toUpperCase();
 	var name = req.body.name;
 	var num = req.body.num;
-	var received = 0;
+	var received = req.body.status === '입고완료' ? 1 : 0;
 	var picture = `./${rfid}.jpg`;
-	var id = 'test';
+	var id = req.session.uid;
 
-	db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
-		if (err) throw err;
-		else res.redirect('warehousing');
-	});
+	if(!req.session.isLogined) res.status(401).send("로그인 후 이용해주세요.");
+	else {
+		db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
+			if (err) throw err;
+			else res.redirect('warehousing');
+		});
+	}
 }
 
 
@@ -43,10 +46,13 @@ exports.randomTest = function(req, res, db) {
 	var num = Math.floor(Math.random() * 100) + 1;
 	var received = Math.floor(Math.random() * 2);
 	var picture = `./${rfid}.jpg`;
-	var id = 'test';
+	var id = req.session.uid;
 
-	db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
-		if (err) throw err;
-		else res.redirect('warehousing');
-	});
+	if(!req.session.isLogined) res.status(401).send("로그인 후 이용해주세요.");
+	else {
+		db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
+			if (err) throw err;
+			else res.redirect('warehousing');
+		});
+	}
 }

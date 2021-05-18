@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var favicon = require('serve-favicon');
 var session = require("express-session");
+var MySQLStore = require("express-mysql-session")(session);
 
 //connect DB
 var DB = require('./views/DBConnection');
@@ -27,7 +28,19 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/public', express.static(path.join(__dirname, '/public')));
 app.use(favicon(path.join(__dirname, 'public/images', 'favicon.ico')));
-app.use(session({ secret :"node-session", resave:false, saveUninitialized:true }))
+
+app.use(session({
+  secret: "node-session",
+  resave: false,
+  saveUninitialized: true,
+  store: new MySQLStore({
+    host: '127.0.0.1',
+    post: 3306,
+    user: 'root',
+    password: '',
+    database: 'autoinven'
+  })
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

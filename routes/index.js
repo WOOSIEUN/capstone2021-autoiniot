@@ -23,11 +23,17 @@ module.exports = function(app, db) {
     router.post('/login', function(req, res, next) {
       var ID = req.body['id'];
       var password = req.body['password'];
-      mysql_db.query('select * from users where id=? and pw=?',[ID,ID], function (err, rows, fields) {
+      db.query('select * from users where id=? and password=?',[ID,password], function (err, rows, fields) {
           if (!err) {
               if (rows[0]!=undefined) {
-                  res.send("login success");
+                  console.log(req.session);
+                  req.session.uid = ID;
+                  req.session.isLogined = true;
+                  // res.send("login success");
                   console.log('id : ' + rows[0]['id'] + '<br>' + 'pw : ' + rows[0]['pw']);
+                  req.session.save(function() {
+                      res.redirect('warehousing');
+                  });
               } else {
                   res.send("login error");
               }
