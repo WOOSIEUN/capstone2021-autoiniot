@@ -34,12 +34,33 @@ body {
 .whRegBtn{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    font-size:24px;
     margin-left: 20px;
     margin-right: 3px;
+    margin-bottom: 5px;
+    float: left;
 }
 .whRegTestBtn{
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    font-size:24px;
+    margin-bottom: 5px;
     position: relative;
+    float: left; 
+}
+.RegBtn{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size:24px;
+    margin-top: 10px;
     margin-left: 20px;
+    margin-right: 3px;
+    float: left;
+}
+.CanBtn{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size:24px;
+    margin-top: -6px;
+    float: left; 
 }

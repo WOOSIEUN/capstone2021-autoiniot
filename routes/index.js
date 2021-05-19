@@ -63,6 +63,6 @@ module.exports = function(app, db) {
     });
 
     router.get('/help', (req, res, next) => { res.render('help.ejs') });
-
+    router.get('/mypage', (req, res, next) => { res.render('mypage.ejs') });
     return router;
 }
