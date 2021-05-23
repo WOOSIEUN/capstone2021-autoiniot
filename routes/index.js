@@ -3,9 +3,8 @@ module.exports = function(app, db) {
     var express = require('express');
     var router = express.Router();
 
+    var login = require('./login');
     var warehousing = require('./warehousing');
-
-    /* GET home page. */
 
     router.get('/', (req, res, next) => { res.render('home.ejs') });
 
@@ -20,28 +19,8 @@ module.exports = function(app, db) {
     router.post('/registerItem', (req, res, next) => { warehousing.registerItem(req, res, db) });
 
     router.get('/login', (req, res, next) => { res.render('login.ejs') });
-    router.post('/login', function(req, res, next) {
-      var ID = req.body['id'];
-      var password = req.body['password'];
-      db.query('select * from users where id=? and password=?',[ID,password], function (err, rows, fields) {
-          if (!err) {
-              if (rows[0]!=undefined) {
-                  console.log(req.session);
-                  req.session.uid = ID;
-                  req.session.isLogined = true;
-                  // res.send("login success");
-                  console.log('id : ' + rows[0]['id'] + '<br>' + 'pw : ' + rows[0]['pw']);
-                  req.session.save(function() {
-                      res.redirect('warehousing');
-                  });
-              } else {
-                  res.send("login error");
-              }
-          } else {
-              res.send('error : ' + err);
-          }
-      });
-    });
+
+    router.post('/login', (req, res, next) => { login.loginPost(req, res, db) });
 
     router.get('/join', (req, res, next) => { res.render('join.ejs') });
     router.post('/join', function (req, res, next) {
