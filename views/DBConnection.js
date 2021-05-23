@@ -34,6 +34,18 @@ connection.query(`
             FOREIGN KEY (id) REFERENCES users(id)
             );
         `);
+connection.query(`
+            CREATE TABLE IF NOT EXISTS monitor (
+            time TIMESTAMP NOT NULL,
+            id VARCHAR(21) NOT NULL,
+            temp TINYINT(1) NOT NULL,
+            humid TINYINT(1) NOT NULL,
+            fire TINYINT(1) NOT NULL,
+            gas TINYINT(1) NOT NULL,
+            PRIMARY KEY (time),
+            FOREIGN KEY (id) REFERENCES users(id)
+            );
+        `);
 // 테스트 계정
 // use autoinven;
 // insert into users values ('testid', 'testpw', 'testuser', now(), '남자', 'test@naver.com', '010-0000-0000');
