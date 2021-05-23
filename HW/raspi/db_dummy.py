@@ -25,7 +25,7 @@ db = mysql.connector.connect(
 )
 cursor = db.cursor()
 sql_monitor = "INSERT INTO monitor VALUES (now(), %s, %s, %s, %s, %s)"
-sql_warehouse = "UPDATE warehouse SET received = 2 WHERE rfid = %s"
+sql_warehouse = "UPDATE warehouse SET received = 1 WHERE rfid = %s"
 
 rand = random.Random()
 
