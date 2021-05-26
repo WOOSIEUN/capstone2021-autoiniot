@@ -23,7 +23,9 @@ module.exports = function(app, db) {
     router.post('/login', (req, res, next) => { login.loginPost(req, res, db) });
 
     router.get('/join', (req, res, next) => { res.render('join.ejs') });
-    router.post('/join', function (req, res, next) {
+
+    router.post('/join', (req, res, next) => { login.joinPost(req, res, db) });
+    /*router.post('/join', function (req, res, next) {
       var ID = req.body['id'];
       var password = req.body['password'];
       var birthday = req.body['year'] + "-" + req.body['month'] + "-" + req.body['day'];
@@ -39,7 +41,7 @@ module.exports = function(app, db) {
           res.send('err : ' + err);
         }
       });
-    });
+    });*/
 
     router.get('/help', (req, res, next) => { res.render('help.ejs') });
     router.get('/mypage', (req, res, next) => { res.render('mypage.ejs') });
