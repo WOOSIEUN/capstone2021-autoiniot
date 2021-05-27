@@ -3,6 +3,7 @@ module.exports = function(app, db) {
     var express = require('express');
     var router = express.Router();
 
+    var join = require('./join');
     var login = require('./login');
     var warehousing = require('./warehousing');
 
@@ -15,16 +16,13 @@ module.exports = function(app, db) {
     router.get('/randomTest', (req, res, next) => { warehousing.randomTest(req, res, db) });
 
     router.get('/registerItem', (req, res, next) => { res.render('registerItem.html') });
-
     router.post('/registerItem', (req, res, next) => { warehousing.registerItem(req, res, db) });
 
     router.get('/login', (req, res, next) => { res.render('login.ejs') });
-
     router.post('/login', (req, res, next) => { login.loginPost(req, res, db) });
 
     router.get('/join', (req, res, next) => { res.render('join.ejs') });
-
-    router.post('/join', (req, res, next) => { login.joinPost(req, res, db) });
+    router.post('/join', (req, res, next) => { join.joinPost(req, res, db) });
     /*router.post('/join', function (req, res, next) {
       var ID = req.body['id'];
       var password = req.body['password'];
@@ -44,6 +42,7 @@ module.exports = function(app, db) {
     });*/
 
     router.get('/help', (req, res, next) => { res.render('help.ejs') });
+    
     router.get('/mypage', (req, res, next) => { res.render('mypage.ejs') });
     return router;
 }

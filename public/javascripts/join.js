@@ -1,4 +1,4 @@
-var id = document.querySelector('#id');
+/*var id = document.querySelector('#id');
 
 var pw1 = document.querySelector('#pswd1');
 var pwMsg = document.querySelector('#alertTxt');
@@ -24,9 +24,7 @@ var error = document.querySelectorAll('.error_next_box');
 
 var button = $('button');
 
-/*이벤트 핸들러 연결*/
-
-id.addEventListener("focusout", checkId);
+/*id.addEventListener("focusout", checkId);
 pw1.addEventListener("focusout", checkPw);
 pw2.addEventListener("focusout", comparePw);
 userName.addEventListener("focusout", checkName);
@@ -42,8 +40,6 @@ gender.addEventListener("focusout", function() {
 })
 email.addEventListener("focusout", isEmailCorrect);
 mobile.addEventListener("focusout", checkPhoneNum);
-
-/*콜백 함수*/
 
 function checkId() {
     var idPattern = /[a-zA-Z0-9_-]{5,20}/;
@@ -195,12 +191,13 @@ function checkPhoneNum() {
         error[7].style.display = "none";
     }
 
-}
+}*/
 
 $(function() {
 
     var id = $('#id');
     var pw = $('#pswd1');
+    var name = $('#name');
      var birth_yy = $('#yy');
      var birth_mm = $('#mm');
      var birth_dd = $('#dd');
@@ -213,18 +210,18 @@ $(function() {
        $.post('join', {
           id: $.trim(id.val()),
           password: $.trim(pw.val()),
-          birth_yy: $.trim(birth_yy.val()),
-          birth_mm: $.trim(birth_mm.val()),
-          birth_dd: $.trim(birth_dd.val()),
+          uname: $.trim(name.val()),
+          year: $.trim(birth_yy.val()),
+          month: $.trim(birth_mm.val()),
+          day: $.trim(birth_dd.val()),
           gender: $.trim(gender.val()),
           email: $.trim(email.val()),
-          mobile: $.trim(mobile.val()),
-
+          phone: $.trim(mobile.val())
        })
        .done((data) => {
           console.log(data);
           if (data === 'join success') {
-             location.href = 'warehousing';
+             location.href = 'login';
           }
           else {
              alert('회원가입에 실패 했습니다.');
