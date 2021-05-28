@@ -8,6 +8,7 @@ var logger = require('morgan');
 var favicon = require('serve-favicon');
 var session = require("express-session");
 var MySQLStore = require("express-mysql-session")(session);
+var apolloServer = require('./apollo');
 
 //connect DB
 var DB = require('./views/DBConnection');
@@ -16,6 +17,9 @@ var app = express();
 
 var indexRouter = require('./routes/index')(app, DB);
 var usersRouter = require('./routes/users');
+
+// apollo
+apolloServer.applyMiddleware({ app });
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -57,8 +61,9 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
+  console.error(err);
   res.status(err.status || 500);
-  res.render('error.html');
+  res.render('error.pug');
 });
 
 module.exports = app;

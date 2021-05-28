@@ -3,12 +3,15 @@ import requests
 import random
 import time
 
+# 서버 ip 입력
+ip = '192.168.0.24'
+
 while 1:
     id = input('id: ')
     pw = input('pw: ')
 
     session = requests.session()
-    url_login = 'http://localhost:3000/login'
+    url_login = f'http://{ip}:3000/login'
     params = {'id': id, 'password': pw}
 
     txt = session.post(url_login, params).text
@@ -17,7 +20,7 @@ while 1:
 
 
 db = mysql.connector.connect(
-    host='localhost',
+    host=ip,
     user='root',
     port=3306,
     passwd='',
@@ -45,17 +48,3 @@ while 1:
     db.commit()
 
     time.sleep(1)
-
-
-# monitor 테이블
-
-# CREATE TABLE IF NOT EXISTS monitor (
-#             time TIMESTAMP NOT NULL,
-#             id VARCHAR(21) NOT NULL,
-#             temp TINYINT(1) NOT NULL,
-#             humid TINYINT(1) NOT NULL,
-#             fire TINYINT(1) NOT NULL,
-#             gas TINYINT(1) NOT NULL,
-#             PRIMARY KEY (time),
-#             FOREIGN KEY (id) REFERENCES users(id)
-#             );

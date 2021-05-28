@@ -46,8 +46,5 @@ connection.query(`
             FOREIGN KEY (id) REFERENCES users(id)
             );
         `);
-// 테스트 계정
-// use autoinven;
-// insert into users values ('testid', 'testpw', 'testuser', now(), '남자', 'test@naver.com', '010-0000-0000');
 
 module.exports = connection;
