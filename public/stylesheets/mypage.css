@@ -1,59 +1,29 @@
-.div-mypage{
-  max-width: 1000px;
-  min-width: 250px;
-  margin: auto;
-  font-size: 14px;
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
 }
 
-.list-feature li {
-  position: relative;
-  min-height: 100px;
-  margin-left: 320px;
-  border-bottom: 1px solid #ddd;
+body {
+  background: #f5f6f7;
+  width: 1000px;
 }
 
-.list-feature #title{
-  margin-top: 20px;
-  color: #888;
-  position: relative;
-  margin-left: 50px;
+.userInfo {
+  display: block;
+  padding: 100px 50px 100px 50px;
+  margin: 20px;
+  margin-left: 250px;
+  border-radius: 10px 10px 10px 10px;
+  background-color: white;
+  text-align: center;
 }
 
-.list-feature .info {
-  color: #bebebe;
-  font-size: 20px;
-  width: 200px;
-  float:left;
+img {
+  width: 120px;
 }
 
-.list-feature .text {
-  padding: 35px 0 0 0
+h2 {
+  margin: 30px;
 }
-
-.list-feature .data{
-  position: relative;
-  margin-left: 50px;
-  color: #bebebe;
-  font-size: 20px;
-  float:left;
-}
-
-
-.list-feature h3 {
-  margin-top: 5px;
-  font-size: 34px;
-  line-height: 100%
-}
-
-.list-feature h4 {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #7b68ee;
-}
-
-.list-feature p {
-  margin-top: 10px;
-  color: #888;
-  line-height: 1.5
-}
-

@@ -6,6 +6,7 @@ module.exports = function(app, db) {
     var join = require('./join');
     var login = require('./login');
     var warehousing = require('./warehousing');
+    var mypage = require('./mypage');
 
     router.get('/', (req, res, next) => { res.render('home.ejs') });
 
@@ -43,6 +44,6 @@ module.exports = function(app, db) {
 
     router.get('/help', (req, res, next) => { res.render('help.ejs') });
     
-    router.get('/mypage', (req, res, next) => { res.render('mypage.ejs') });
+    router.get('/mypage', (req, res, next) => { mypage.init(req, res, db) });
     return router;
 }
