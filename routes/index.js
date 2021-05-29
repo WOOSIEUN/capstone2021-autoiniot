@@ -3,14 +3,16 @@ module.exports = function(app, db) {
     var express = require('express');
     var router = express.Router();
 
+    var home = require('./home');
     var join = require('./join');
     var login = require('./login');
+    var monitoring = require('./monitoring');
     var warehousing = require('./warehousing');
     var mypage = require('./mypage');
 
-    router.get('/', (req, res, next) => { res.render('home.ejs') });
+    router.get('/', (req, res, next) => { home.init(req, res, db) });
 
-    router.get('/monitoring', (req, res, next) => { res.render('monitoring.ejs') });
+    router.get('/monitoring', (req, res, next) => { monitoring.init(req, res, db) });
 
     router.get('/warehousing', (req, res, next) => { warehousing.init(req, res, db) });
 

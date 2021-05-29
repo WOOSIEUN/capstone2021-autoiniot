@@ -1,11 +1,13 @@
 exports.init = function(req, res, db) {
-	db.query("SELECT * FROM warehouse;", (err, result) => {
-		if (err) throw err;
-		else {
-			var items = '';
-			for (var i = 0; i < result.length; i++) {
-				result[i].received = result[i].received ? '입고완료' : '미입고';
-				items += `
+	if(!req.session.isLogined) res.status(401).render('unauthorized');
+	else {
+		db.query("SELECT * FROM warehouse WHERE id=?;", [req.session.uid], (err, result) => {
+			if (err) throw err;
+			else {
+				var items = '';
+				for (var i = 0; i < result.length; i++) {
+					result[i].received = result[i].received ? '입고완료' : '미입고';
+					items += `
 					<tr>
 						<td>${result[i].rfid}</td>
 						<td>${result[i].name}</td>
@@ -14,10 +16,11 @@ exports.init = function(req, res, db) {
 						<td><button class="checkBtn" onclick="location.href='${result[i].picture}'">확인</button></td>
 					</tr>
 				  `;
+				}
+				res.render('warehousing.html', {table_data: items});
 			}
-			res.render('warehousing.html', {table_data: items});
-		}
-	});
+		});
+	}
 }
 
 
@@ -29,7 +32,7 @@ exports.registerItem = function(req, res, db) {
 	var picture = `./${rfid}.jpg`;
 	var id = req.session.uid;
 
-	if(!req.session.isLogined) res.status(401).send("로그인 후 이용해주세요.");
+	if(!req.session.isLogined) res.status(401).render('unauthorized');
 	else {
 		db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
 			if (err) throw err;
@@ -48,7 +51,7 @@ exports.randomTest = function(req, res, db) {
 	var picture = `./${rfid}.jpg`;
 	var id = req.session.uid;
 
-	if(!req.session.isLogined) res.status(401).send("로그인 후 이용해주세요.");
+	if(!req.session.isLogined) res.status(401).render('unauthorized');
 	else {
 		db.query(`INSERT INTO warehouse VALUES('${rfid}', '${id}', '${name}', ${num}, ${received}, '${picture}');`, (err, result) => {
 			if (err) throw err;
