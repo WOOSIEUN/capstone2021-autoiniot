@@ -26,23 +26,6 @@ module.exports = function(app, db) {
 
     router.get('/join', (req, res, next) => { res.render('join.ejs') });
     router.post('/join', (req, res, next) => { join.joinPost(req, res, db) });
-    /*router.post('/join', function (req, res, next) {
-      var ID = req.body['id'];
-      var password = req.body['password'];
-      var birthday = req.body['year'] + "-" + req.body['month'] + "-" + req.body['day'];
-      var gender = req.body['gender'];
-      var email = req.body['email'];
-      var phone = req.body['phone'];
-
-      mysqlDB.query('INSERT INTO users VALUES(?,?)', [ID, password, birthday, gender, email, phone], function (err, rows, fields) {
-        if (!err) {
-          res.send('success');
-          console.log("INSERT SUCCESS");
-        } else {
-          res.send('err : ' + err);
-        }
-      });
-    });*/
 
     router.get('/help', (req, res, next) => { res.render('help.ejs') });
     

@@ -6,8 +6,10 @@ body {
 }
 
 .header{
-    border-bottom: #5f4ebd;
+    border-bottom: #1a1a1b;
+    margin-top: 20px;
     margin-left: 20px;
+    width: 500px;
 }
 
 .box {

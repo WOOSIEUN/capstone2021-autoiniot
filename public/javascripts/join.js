@@ -24,7 +24,7 @@ var error = document.querySelectorAll('.error_next_box');
 
 var button = $('button');
 
-/*id.addEventListener("focusout", checkId);
+id.addEventListener("focusout", checkId);
 pw1.addEventListener("focusout", checkPw);
 pw2.addEventListener("focusout", comparePw);
 userName.addEventListener("focusout", checkName);
