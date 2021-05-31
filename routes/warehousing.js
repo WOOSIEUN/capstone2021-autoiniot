@@ -28,7 +28,7 @@ exports.registerItem = function(req, res, db) {
 	var rfid = req.body.rfid.toUpperCase();
 	var name = req.body.name;
 	var num = req.body.num;
-	var received = req.body.status === '입고완료' ? 1 : 0;
+	var received = 0;
 	var picture = `./${rfid}.jpg`;
 	var id = req.session.uid;
 
