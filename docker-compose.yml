@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  app:
+    ports:
+      - 4000:4000
+    build: ./
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_ROOT_PASSWORD: Mwalker00!
+      MYSQL_USER: autoin
+      MYSQL_PASSWORD: autoin2021
+      MYSQL_DB: autoinven      
+      MYSQL_PORT: 3306
+    depends_on:
+      - mysql
+    restart: on-failure
+    links:
+      - mysql
+    container_name: autoinvenRealtime
+
+  mysql:
+    image: mysql:5.7
+    command: mysqld --sql_mode=""
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: autoin102030
+      MYSQL_USER: autoin
+      MYSQL_PASSWORD: autoin2021
+      MYSQL_DB: autoinven
+      MYSQL_HOST: mysql

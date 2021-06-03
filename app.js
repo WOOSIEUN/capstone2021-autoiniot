@@ -38,10 +38,10 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   store: new MySQLStore({
-    host: '127.0.0.1',
+    host: process.env.MYSQL_HOST,
     post: 3306,
-    user: 'root',
-    password: '',
+    user: 'autoinven',
+    password: 'autoin1021',
     database: 'autoinven'
   })
 }));
