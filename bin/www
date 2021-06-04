@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('capstone2021-autoinven:server');
 var http = require('http');
+var httpProxy = require('http-proxy');
 // var apolloServer = require('../apollo');
 
 /**
