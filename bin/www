@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('capstone2021-autoinven:server');
 var http = require('http');
-var apolloServer = require('../apollo');
+// var apolloServer = require('../apollo');
 
 /**
  * Get port from environment and store in Express.
@@ -21,9 +21,17 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var proxy = httpProxy.createServer({
+  target: 'ws://192.168.147.20:3000',
+  ws: true
+});
+
+server.on('upgrade', (req, socket, head) => {
+  proxy.ws(req, socket, head);
+});
 
 // apollo
-apolloServer.installSubscriptionHandlers(server);
+// apolloServer.installSubscriptionHandlers(server);
 
 /**
  * Listen on provided port, on all network interfaces.

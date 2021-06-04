@@ -8,18 +8,17 @@ var logger = require('morgan');
 var favicon = require('serve-favicon');
 var session = require("express-session");
 var MySQLStore = require("express-mysql-session")(session);
-var apolloServer = require('./apollo');
+// var apolloServer = require('./apollo');
 
 //connect DB
 var DB = require('./views/DBConnection');
 
 var app = express();
-
 var indexRouter = require('./routes/index')(app, DB);
 var usersRouter = require('./routes/users');
 
 // apollo
-apolloServer.applyMiddleware({ app });
+// apolloServer.applyMiddleware({ app });
 
 // view engine setup
 app.set('views', path.join(__dirname, '/views'));
@@ -41,7 +40,7 @@ app.use(session({
     host: process.env.MYSQL_HOST,
     post: 3306,
     user: 'autoinven',
-    password: 'autoin1021',
+    password: 'autoin2021',
     database: 'autoinven'
   })
 }));
